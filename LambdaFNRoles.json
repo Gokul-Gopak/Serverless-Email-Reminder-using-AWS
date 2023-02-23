@@ -1,0 +1,30 @@
+//CloudwatchLogs
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Action": [
+                "logs:CreateLogGroup",
+                "logs:CreateLogStream",
+                "logs:PutLogEvents"
+            ],
+            "Resource": "arn:aws:logs:*:*:*",
+            "Effect": "Allow"
+        }
+    ]
+}
+//SNS, SES and changing of states allow permissions
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Action": [
+                "ses:*",
+                "sns:*",
+                "states:*"
+            ],
+            "Resource": "*",
+            "Effect": "Allow"
+        }
+    ]
+}
